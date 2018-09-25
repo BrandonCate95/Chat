@@ -27,7 +27,7 @@ const Header = ({username}) => (
             </div>            
         </div>
         <header>
-            <h1 style={{textAlign: 'center', fontSize: 'calc(1vh + 2vw)'}}>Welcome {username}</h1>
+            <h1 style={{textAlign: 'center', fontSize: 'calc(1.3vh + 1.7vw)'}}>Welcome {username}</h1>
         </header>
     </div>
 )
