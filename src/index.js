@@ -16,9 +16,6 @@ Amplify.configure(awsmobile)
 //     Amplify.configure(awsmobile)    
 // })
 
-// on client app load
-window.scrollTo(0,1)
-
 const client = new AWSAppSyncClient({
     url: AppSync.graphqlEndpoint,
     region: AppSync.region,
