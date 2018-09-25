@@ -3,6 +3,7 @@
 node_modules/*
 !node_modules/react-apollo/
 !node_modules/apollo-link/
+!node_modules/@material/
 
 .elasticbeanstalk/
 # Elastic Beanstalk Files
