@@ -1,5 +1,4 @@
 import React from 'react'
-// import Button from '../mdc/Button'
 import Loadable from 'react-loadable'
 import Loading from '../Loading'
 
@@ -10,6 +9,7 @@ const LoadableButton = Loadable({
 
 const About = () => (
     <div>
+        This page will explain exactly what this web app does.
         This is the about page: about me!
         <LoadableButton>Hello!</LoadableButton>
     </div>
