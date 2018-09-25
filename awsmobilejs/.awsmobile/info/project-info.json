@@ -1,0 +1,19 @@
+{
+	"ProjectName": "webpack-demo",
+	"ProjectPath": "C:\\xampp\\htdocs\\webpack-demo",
+	"InitializationTime": "",
+	"LastConfigurationTime": "2018-08-26-12-35-03",
+	"LastNPMInstallTime": "",
+	"FrontendLastBuildTime": "",
+	"LastPublishTime": "",
+	"BackendLastSyncTime": "2018-08-26-12-35-25",
+	"BackendLastBuildTime": "",
+	"BackendLastPushTime": "",
+	"BackendProjectID": "b1803b0b-4e09-44d8-8094-1f739e9d6e3c",
+	"BackendProjectName": "message-board-v-1",
+	"BackendProjectConsoleUrl": "https://console.aws.amazon.com/mobilehub/home#/b1803b0b-4e09-44d8-8094-1f739e9d6e3c/build",
+	"BackendProjectCreationTime": "2018-08-26T19:35:17.002Z",
+	"BackendProjectLastUpdatedTime": "2018-08-26T19:35:21.649Z",
+	"Framework": "react",
+	"BackendLastSyncToDevTime": "2018-08-26-12-35-25"
+}

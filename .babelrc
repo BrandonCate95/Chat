@@ -1,0 +1,147 @@
+{ 
+    "presets": [["env"], "react"],
+    "plugins": [
+        "syntax-dynamic-import",
+        "transform-object-rest-spread", 
+        "transform-class-properties",
+        ["transform-runtime", {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+        }],
+        ["import", {
+            "libraryName": "react-router-dom",
+            "libraryDirectory": "",
+            "camel2DashComponentName": false,
+            "style": false
+        }, "react-router-dom"],
+        ["import", {
+            "libraryName": "react-router",
+            "libraryDirectory": "",
+            "camel2DashComponentName": false,
+            "style": false
+        }, "react-router"],
+        ["import", {
+            "libraryName": "aws-amplify",
+            "libraryDirectory": "",
+            "camel2DashComponentName": false,
+            "style": false
+        }, "aws-amplify"],
+        ["import", {
+            "libraryName": "@aws-amplify",
+            "libraryDirectory": "",
+            "camel2DashComponentName": false,
+            "style": false
+        }, "@aws-amplify"],
+        ["react-css-modules",{
+            "generateScopedName": "[name]_[local]_[hash:base64]",
+            "filetypes": {
+                ".scss": {
+                  "syntax": "postcss-scss"
+                }
+            }
+        }],
+        "react-loadable/babel"
+    ],
+    "env": {
+        "lib": {
+            "presets": [["env"], "react"],
+            "plugins": [
+                "syntax-dynamic-import",
+                "dynamic-import-node",
+                "transform-object-rest-spread", 
+                "transform-class-properties",
+                ["transform-runtime", {
+                    "helpers": false,
+                    "polyfill": false,
+                    "regenerator": true,
+                    "moduleName": "babel-runtime"
+                }],
+                ["import", {
+                    "libraryName": "react-router-dom",
+                    "libraryDirectory": "",
+                    "camel2DashComponentName": false,
+                    "style": false
+                }, "react-router-dom"],
+                ["import", {
+                    "libraryName": "react-router",
+                    "libraryDirectory": "",
+                    "camel2DashComponentName": false,
+                    "style": false
+                }, "react-router"],
+                ["import", {
+                    "libraryName": "aws-amplify",
+                    "libraryDirectory": "",
+                    "camel2DashComponentName": false,
+                    "style": false
+                }, "aws-amplify"],
+                ["import", {
+                    "libraryName": "@aws-amplify",
+                    "libraryDirectory": "",
+                    "camel2DashComponentName": false,
+                    "style": false
+                }, "@aws-amplify"],
+                ["react-css-modules",{
+                    "generateScopedName": "[name]_[local]_[hash:base64]",
+                    "removeImport": true,
+                    "filetypes": {
+                        ".scss": {
+                          "syntax": "postcss-scss"
+                        }
+                    }
+                }],
+                "react-loadable/babel"
+            ]
+        },
+        "lib_dev": {
+            "presets": [["env"], "react"],
+            "plugins": [
+                "syntax-dynamic-import",
+                "dynamic-import-node",
+                "transform-object-rest-spread", 
+                "transform-class-properties",
+                ["transform-runtime", {
+                    "helpers": false,
+                    "polyfill": false,
+                    "regenerator": true,
+                    "moduleName": "babel-runtime"
+                }],
+                ["import", {
+                    "libraryName": "react-router-dom",
+                    "libraryDirectory": "",
+                    "camel2DashComponentName": false,
+                    "style": false
+                }, "react-router-dom"],
+                ["import", {
+                    "libraryName": "react-router",
+                    "libraryDirectory": "",
+                    "camel2DashComponentName": false,
+                    "style": false
+                }, "react-router"],
+                ["import", {
+                    "libraryName": "aws-amplify",
+                    "libraryDirectory": "",
+                    "camel2DashComponentName": false,
+                    "style": false
+                }, "aws-amplify"],
+                ["import", {
+                    "libraryName": "@aws-amplify",
+                    "libraryDirectory": "",
+                    "camel2DashComponentName": false,
+                    "style": false
+                }, "@aws-amplify"],
+                ["react-css-modules",{
+                    "generateScopedName": "[name]_[local]_[hash:base64]",
+                    "removeImport": true,
+                    "filetypes": {
+                        ".scss": {
+                          "syntax": "postcss-scss"
+                        }
+                    }
+                }],
+                "react-loadable/babel"
+            ]
+        }
+    }
+}

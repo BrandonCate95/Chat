@@ -1,0 +1,11 @@
+$mdc-theme-primary: rgb(0,180,255);
+
+@import "@material/button/mdc-button";
+@import "@material/textfield/mdc-text-field";
+
+@import "@material/ripple/common";
+@import "@material/ripple/mixins";
+
+.hello {
+    color: blue;
+}

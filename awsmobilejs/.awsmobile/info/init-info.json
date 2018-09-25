@@ -1,0 +1,140 @@
+{
+	"projectPath": "C:\\xampp\\htdocs\\webpack-demo",
+	"backupAWSMobileJSDirPath": "C:\\xampp\\htdocs\\webpack-demo\\~awsmobilejs-2018-08-26-12-34-54",
+	"projectInfo": {
+		"ProjectName": "webpack-demo",
+		"ProjectPath": "C:\\xampp\\htdocs\\webpack-demo",
+		"InitializationTime": "",
+		"LastConfigurationTime": "",
+		"LastNPMInstallTime": "",
+		"FrontendLastBuildTime": "",
+		"LastPublishTime": "",
+		"BackendLastSyncTime": "",
+		"BackendLastBuildTime": "",
+		"BackendLastPushTime": "",
+		"BackendProjectID": "",
+		"BackendProjectName": "",
+		"BackendProjectConsoleUrl": "",
+		"BackendProjectCreationTime": "",
+		"BackendProjectLastUpdatedTime": "",
+		"Framework": "react"
+	},
+	"packageJson": {
+		"name": "webpack-demo",
+		"sideEffects": false,
+		"version": "1.0.0",
+		"description": "",
+		"private": true,
+		"scripts": {
+			"test": "webpack -p --config webpack.prod.js --profile --json > stats.json",
+			"postinstall": "npm run build",
+			"start:client": "webpack --config webpack.dev.js --progress",
+			"start:lib": "better-npm-run lib-watch",
+			"start:server": "nodemon -e js,jsx server-env.js --ignore lib --ignore dist --watch src --exec babel-node",
+			"start": "npm-run-all -p start:lib start:server",
+			"build:server": "babel server-env.js --out-file server.js",
+			"build:client": "webpack -p --config webpack.prod.js --progress",
+			"build:client:nosw": "webpack --env=false -p --config webpack.prod.js --progress",
+			"build": "better-npm-run build",
+			"build:nosw": "better-npm-run build:nosw",
+			"server": "better-npm-run server",
+			"lib": "better-npm-run lib "
+		},
+		"betterScripts": {
+			"lib": {
+				"command": "babel ./src -d ./lib",
+				"env": {
+					"BABEL_ENV": "lib"
+				}
+			},
+			"lib-watch": {
+				"command": "babel ./src --watch -d ./lib",
+				"env": {
+					"BABEL_ENV": "lib_dev"
+				}
+			},
+			"build": {
+				"command": " npm run lib && npm run build:client && npm run build:server",
+				"env": {
+					"NODE_ENV": "production"
+				}
+			},
+			"build:server": {
+				"command": "babel server-env.js --out-file server.js",
+				"env": {
+					"BABEL_ENV": "lib"
+				}
+			},
+			"start": {
+				"command": "npm run start:client && npm run start:server",
+				"env": {
+					"NODE_ENV": "development"
+				}
+			},
+			"server": {
+				"command": "node server.js",
+				"env": {
+					"NODE_ENV": "production"
+				}
+			}
+		},
+		"keywords": [],
+		"author": "",
+		"license": "ISC",
+		"devDependencies": {
+			"autoprefixer": "^9.1.1",
+			"babel-cli": "^6.26.0",
+			"babel-loader": "^7.1.5",
+			"babel-plugin-dynamic-import-node": "^2.0.0",
+			"babel-plugin-import": "^1.8.0",
+			"babel-plugin-module-resolver": "^3.1.1",
+			"babel-plugin-syntax-dynamic-import": "^6.18.0",
+			"babel-plugin-transform-class-properties": "^6.24.1",
+			"babel-plugin-transform-object-rest-spread": "^6.26.0",
+			"babel-plugin-transform-runtime": "^6.23.0",
+			"babel-preset-env": "^1.7.0",
+			"babel-preset-react": "^6.24.1",
+			"better-npm-run": "^0.1.1",
+			"clean-webpack-plugin": "^0.1.19",
+			"css-loader": "^1.0.0",
+			"express": "^4.16.3",
+			"extract-loader": "^2.0.1",
+			"file-loader": "^1.1.11",
+			"html-webpack-plugin": "^3.2.0",
+			"mini-css-extract-plugin": "^0.4.1",
+			"node-sass": "^4.9.3",
+			"nodemon": "^1.18.3",
+			"npm-run-all": "^4.1.3",
+			"optimize-css-assets-webpack-plugin": "^5.0.0",
+			"postcss-scss": "^2.0.0",
+			"sass-loader": "^7.1.0",
+			"style-loader": "^0.22.1",
+			"webpack": "^4.16.5",
+			"webpack-bundle-analyzer": "^2.13.1",
+			"webpack-cli": "^3.1.0",
+			"webpack-dev-middleware": "^3.1.3",
+			"webpack-hot-middleware": "^2.22.3",
+			"webpack-merge": "^4.1.4",
+			"workbox-webpack-plugin": "^3.4.1"
+		},
+		"dependencies": {
+			"@material-ui/core": "^1.5.0",
+			"@material/button": "^0.38.1",
+			"@material/react-ripple": "^0.4.2",
+			"@material/ripple": "^0.38.1",
+			"@material/textfield": "^0.38.1",
+			"babel-plugin-react-css-modules": "^3.4.2",
+			"babel-runtime": "^6.26.0",
+			"compression": "^1.7.3",
+			"preact": "^8.3.1",
+			"preact-compat": "^3.18.3",
+			"react": "^16.4.2",
+			"react-dom": "^16.4.2",
+			"react-loadable": "^5.5.0",
+			"react-router-dom": "^4.3.1"
+		}
+	},
+	"framework": "react",
+	"initialStage": "invalid",
+	"strategy": "create"
+}
