@@ -93,7 +93,7 @@ app.use((0, _compression2.default)());
 var DIST_DIR = _path2.default.join(__dirname, "dist");
 var HTML_FILE = _path2.default.join(DIST_DIR, "index.html");
 var LOADABLE_JSON = _path2.default.join(__dirname, "react-loadable.json");
-var isDevelopment = app.get('env') !== "production";
+var isDevelopment = false; // app.get('env') !== "production"
 var DEFAULT_PORT = 3000;
 
 app.set("port", process.env.PORT || DEFAULT_PORT);
