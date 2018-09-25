@@ -28,7 +28,7 @@ app.use(compression())
 const DIST_DIR = path.join(__dirname, "dist")
 const HTML_FILE = path.join(DIST_DIR, "index.html")
 const LOADABLE_JSON = path.join(__dirname, "react-loadable.json")
-const isDevelopment  = false // app.get('env') !== "production"
+const isDevelopment  = app.get('env') === "dev"
 const DEFAULT_PORT = 3000
 
 app.set("port", process.env.PORT || DEFAULT_PORT);

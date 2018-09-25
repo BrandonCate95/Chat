@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { ReactLoadablePlugin } = require("react-loadable/webpack");
 
-const devMode = false // process.env.NODE_ENV !== 'production'
+const devMode = process.env.NODE_ENV == 'dev'
 console.log('devMode ', devMode)
 
 module.exports = {

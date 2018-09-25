@@ -9,7 +9,7 @@
     "postinstall": "npm run build",
     "start:client": "webpack --config webpack.dev.js --progress",
     "start:lib": "better-npm-run lib-watch",
-    "start:server": "nodemon server-env.js --ignore lib --ignore dist --watch src --watch server-env.js --exec babel-node --presets env,react",
+    "start:server": "better-npm-run start:server",
     "start": "npm-run-all -p start:lib start:server",
     "build:server": "babel server-env.js --out-file server.js",
     "build:client": "webpack -p --config webpack.prod.js --progress",
@@ -18,9 +18,16 @@
     "build:nosw": "better-npm-run build:nosw",
     "server": "better-npm-run server",
     "aws:server": "NODE_ENV=production npm install && NODE_ENV=production nodemon server.js",
-    "lib": "better-npm-run lib "
+    "lib": "better-npm-run lib ",
+    "transpile": "babel @material, apollo-link, react-apollo"
   },
   "betterScripts": {
+    "start:server": {
+      "command": "nodemon server-env.js --ignore lib --ignore dist --watch src --watch server-env.js --exec babel-node --presets env,react",
+      "env": {
+        "NODE_ENV": "dev"
+      }
+    },
     "lib": {
       "command": "babel ./src -d ./lib",
       "env": {
@@ -48,7 +55,7 @@
     "start": {
       "command": "npm run start:client && npm run start:server",
       "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "dev"
       }
     },
     "server": {
@@ -64,6 +71,7 @@
   "devDependencies": {
     "autoprefixer": "^9.1.1",
     "babel-cli": "^6.26.0",
+    "node-sass": "^4.9.3",
     "npm-run-all": "^4.1.3",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",

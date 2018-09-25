@@ -6,9 +6,6 @@ import Header from './Header'
 import Loadable from 'react-loadable'
 import Loading from './Loading'
 
-// on app load
-window.scrollTo(0,1)
-
 const LoadableHome = Loadable({
     loader: () => import('./pages/Home'),
     loading: Loading
