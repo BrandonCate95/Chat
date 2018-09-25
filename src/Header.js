@@ -21,7 +21,7 @@ const Header = ({username}) => (
                 flex: 1,
                 textAlign: 'start'
             }}><i className="fas fa-home"></i></Link>
-            <div>
+            <div style={{marginTop: '4px'}}>
                 <Link to="/About" style={linkStyle}>About</Link>
                 <Link to="/Contact" style={linkStyle}>Contact</Link>
             </div>            

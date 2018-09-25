@@ -12,10 +12,6 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _compression = require('compression');
-
-var _compression2 = _interopRequireDefault(_compression);
-
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -89,7 +85,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 _awsAmplify2.default.configure(_awsExports2.default);
 
 var app = (0, _express2.default)();
-app.use((0, _compression2.default)());
 var DIST_DIR = _path2.default.join(__dirname, "dist");
 var HTML_FILE = _path2.default.join(DIST_DIR, "index.html");
 var LOADABLE_JSON = _path2.default.join(__dirname, "react-loadable.json");

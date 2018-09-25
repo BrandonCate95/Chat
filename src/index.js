@@ -9,6 +9,7 @@ import AWSAppSyncClient from 'aws-appsync'
 import { Rehydrated } from 'aws-appsync-react'
 import { ApolloProvider } from 'react-apollo'
 import { InMemoryCache } from 'apollo-cache-inmemory'
+
 import Amplify from 'aws-amplify'
 Amplify.configure(awsmobile)    
 
@@ -39,7 +40,7 @@ const WithProvider = () => (
 )
 
 Loadable.preloadReady().then(() => {
-    ReactDOM.hydrate(<WithProvider />, document.getElementById('root'));
+    ReactDOM.render(<WithProvider />, document.getElementById('root'));
 });
 
 // if ('serviceWorker' in navigator) {

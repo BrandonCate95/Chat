@@ -2,7 +2,8 @@ import React from 'react'
 
 const Contact = () => (
     <div>
-        This is the contact page
+        If you have any additional questions please contact me at:
+        <div>brandoncate95@gmail.com</div>
     </div>
 )
 

@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import compression from 'compression'
 import express from 'express'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
@@ -24,7 +23,6 @@ import Amplify from 'aws-amplify'
 Amplify.configure(awsmobile)    
 
 const app = express()
-app.use(compression())
 const DIST_DIR = path.join(__dirname, "dist")
 const HTML_FILE = path.join(DIST_DIR, "index.html")
 const LOADABLE_JSON = path.join(__dirname, "react-loadable.json")
