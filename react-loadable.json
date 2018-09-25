@@ -945,7 +945,7 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
-  "./rest": [
+  "./protocol/rest": [
     {
       "id": "/Vfx",
       "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/protocol/rest.js",
@@ -953,8 +953,56 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
+      "id": "1QM6",
+      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/protocol/rest.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "KFai",
+      "name": "./node_modules/aws-sdk/lib/protocol/rest.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "Pz4V",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/protocol/rest.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "VFh+",
+      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/protocol/rest.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
       "id": "/Vfx",
       "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/protocol/rest.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "1QM6",
+      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/protocol/rest.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "KFai",
+      "name": "./node_modules/aws-sdk/lib/protocol/rest.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "Pz4V",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/protocol/rest.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "VFh+",
+      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/protocol/rest.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
@@ -1787,56 +1835,6 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
-  "./protocol/rest": [
-    {
-      "id": "1QM6",
-      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/protocol/rest.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "KFai",
-      "name": "./node_modules/aws-sdk/lib/protocol/rest.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "Pz4V",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/protocol/rest.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "VFh+",
-      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/protocol/rest.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "1QM6",
-      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/protocol/rest.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "KFai",
-      "name": "./node_modules/aws-sdk/lib/protocol/rest.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "Pz4V",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/protocol/rest.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "VFh+",
-      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/protocol/rest.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    }
-  ],
   "./XMLDTDAttList": [
     {
       "id": "1V0F",
@@ -2593,12 +2591,6 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
-      "id": "LgT8",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/model/resource_waiter.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
       "id": "rt19",
       "name": "./node_modules/aws-sdk/lib/resource_waiter.js",
       "file": "index.0405bb1223f1eccc2f32.js",
@@ -2625,12 +2617,6 @@
     {
       "id": "Gt2T",
       "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/resource_waiter.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "LgT8",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/model/resource_waiter.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     },
@@ -2749,7 +2735,7 @@
       "publicPath": "/dist/11.e1e10edc9eaf577e9617.js.map"
     }
   ],
-  "./json": [
+  "./protocol/json": [
     {
       "id": "2gUY",
       "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/protocol/json.js",
@@ -2757,8 +2743,44 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
+      "id": "9pB+",
+      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/protocol/json.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "BGYI",
+      "name": "./node_modules/aws-sdk/lib/protocol/json.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "xm9Y",
+      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/protocol/json.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
       "id": "2gUY",
       "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/protocol/json.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "9pB+",
+      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/protocol/json.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "BGYI",
+      "name": "./node_modules/aws-sdk/lib/protocol/json.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "xm9Y",
+      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/protocol/json.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
@@ -3271,7 +3293,7 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
-  "../utilities/typeFromAST": [
+  "./typeFromAST": [
     {
       "id": "3w1o",
       "name": "./node_modules/graphql/utilities/typeFromAST.js",
@@ -3785,34 +3807,10 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
-      "id": "xaK5",
-      "name": "./node_modules/graphql/language/kinds.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
       "id": "58i8",
       "name": "./node_modules/@aws-amplify/api/node_modules/graphql/language/kinds.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "xaK5",
-      "name": "./node_modules/graphql/language/kinds.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "xaK5",
-      "name": "./node_modules/graphql/language/kinds.js",
-      "file": "10.1f3d8d94108cfee20f2f.js",
-      "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js"
-    },
-    {
-      "id": "xaK5",
-      "name": "./node_modules/graphql/language/kinds.js",
-      "file": "10.1f3d8d94108cfee20f2f.js.map",
-      "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js.map"
     }
   ],
   "./credentials/web_identity_credentials": [
@@ -4363,6 +4361,12 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
+      "id": "Lir2",
+      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/json/parser.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
       "id": "TsQ6",
       "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/json/parser.js",
       "file": "index.0405bb1223f1eccc2f32.js",
@@ -4377,6 +4381,12 @@
     {
       "id": "6hAF",
       "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/json/parser.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "Lir2",
+      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/json/parser.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     },
@@ -5499,56 +5509,6 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
-  "./protocol/json": [
-    {
-      "id": "9pB+",
-      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/protocol/json.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "BGYI",
-      "name": "./node_modules/aws-sdk/lib/protocol/json.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "xm9Y",
-      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/protocol/json.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "ysw7",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/protocol/json.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "9pB+",
-      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/protocol/json.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "BGYI",
-      "name": "./node_modules/aws-sdk/lib/protocol/json.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "xm9Y",
-      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/protocol/json.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "ysw7",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/protocol/json.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    }
-  ],
   "./InterceptorManager": [
     {
       "id": "9rSQ",
@@ -6313,20 +6273,8 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
-      "id": "yIS0",
-      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/http.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
       "id": "C841",
       "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/http.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "yIS0",
-      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/http.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
@@ -6559,6 +6507,12 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
+      "id": "LgT8",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/model/resource_waiter.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
       "id": "LkVv",
       "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/model/resource_waiter.js",
       "file": "index.0405bb1223f1eccc2f32.js",
@@ -6579,6 +6533,12 @@
     {
       "id": "CbSC",
       "name": "./node_modules/aws-sdk/lib/model/resource_waiter.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "LgT8",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/model/resource_waiter.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     },
@@ -7481,37 +7441,13 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
-      "id": "PUII",
-      "name": "./node_modules/graphql/error/index.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
       "id": "FGIN",
       "name": "./node_modules/@aws-amplify/api/node_modules/graphql/error/index.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "PUII",
-      "name": "./node_modules/graphql/error/index.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "PUII",
-      "name": "./node_modules/graphql/error/index.js",
-      "file": "10.1f3d8d94108cfee20f2f.js",
-      "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js"
-    },
-    {
-      "id": "PUII",
-      "name": "./node_modules/graphql/error/index.js",
-      "file": "10.1f3d8d94108cfee20f2f.js.map",
-      "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js.map"
     }
   ],
-  "./v4_credentials": [
+  "../signers/v4_credentials": [
     {
       "id": "FGtl",
       "name": "./node_modules/aws-sdk/lib/signers/v4_credentials.js",
@@ -7519,20 +7455,8 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
-      "id": "NJxt",
-      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/signers/v4_credentials.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "VbXH",
-      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/signers/v4_credentials.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "xr4y",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/signers/v4_credentials.js",
+      "id": "fq1a",
+      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/signers/v4_credentials.js",
       "file": "index.0405bb1223f1eccc2f32.js",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
@@ -7543,25 +7467,13 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     },
     {
-      "id": "NJxt",
-      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/signers/v4_credentials.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "VbXH",
-      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/signers/v4_credentials.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "xr4y",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/signers/v4_credentials.js",
+      "id": "fq1a",
+      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/signers/v4_credentials.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
-  "../json/builder": [
+  "./json/builder": [
     {
       "id": "FPpA",
       "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/json/builder.js",
@@ -7569,8 +7481,20 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
-      "id": "bBuG",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/json/builder.js",
+      "id": "JWCV",
+      "name": "./node_modules/aws-sdk/lib/json/builder.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "ag12",
+      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/json/builder.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "y2r9",
+      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/json/builder.js",
       "file": "index.0405bb1223f1eccc2f32.js",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
@@ -7581,8 +7505,20 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     },
     {
-      "id": "bBuG",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/json/builder.js",
+      "id": "JWCV",
+      "name": "./node_modules/aws-sdk/lib/json/builder.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "ag12",
+      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/json/builder.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "y2r9",
+      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/json/builder.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
@@ -8117,6 +8053,12 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
+      "id": "yIS0",
+      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/http.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
       "id": "HfqT",
       "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/http.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
@@ -8131,6 +8073,12 @@
     {
       "id": "yCDg",
       "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/http.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "yIS0",
+      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/http.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
@@ -8601,44 +8549,6 @@
       "name": "./node_modules/lodash/_baseIsArguments.js",
       "file": "11.e1e10edc9eaf577e9617.js.map",
       "publicPath": "/dist/11.e1e10edc9eaf577e9617.js.map"
-    }
-  ],
-  "./json/builder": [
-    {
-      "id": "JWCV",
-      "name": "./node_modules/aws-sdk/lib/json/builder.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "ag12",
-      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/json/builder.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "y2r9",
-      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/json/builder.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "JWCV",
-      "name": "./node_modules/aws-sdk/lib/json/builder.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "ag12",
-      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/json/builder.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "y2r9",
-      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/json/builder.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
   "./_realNames": [
@@ -9121,32 +9031,6 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
-  "../json/parser": [
-    {
-      "id": "Lir2",
-      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/json/parser.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "bICC",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/json/parser.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "Lir2",
-      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/json/parser.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "bICC",
-      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/json/parser.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    }
-  ],
   "./PubSub": [
     {
       "id": "LkOU",
@@ -9511,6 +9395,44 @@
       "name": "./node_modules/lodash/_createFlow.js",
       "file": "11.e1e10edc9eaf577e9617.js.map",
       "publicPath": "/dist/11.e1e10edc9eaf577e9617.js.map"
+    }
+  ],
+  "./v4_credentials": [
+    {
+      "id": "NJxt",
+      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/signers/v4_credentials.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "VbXH",
+      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/signers/v4_credentials.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "xr4y",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/signers/v4_credentials.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "NJxt",
+      "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/signers/v4_credentials.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "VbXH",
+      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/signers/v4_credentials.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "xr4y",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/signers/v4_credentials.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
   "./_baseIsNative": [
@@ -9903,6 +9825,12 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
+      "id": "wlxu",
+      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/model/shape.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
       "id": "Ovq8",
       "name": "./node_modules/@aws-amplify/analytics/node_modules/aws-sdk/lib/model/shape.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
@@ -9911,6 +9839,12 @@
     {
       "id": "nyFZ",
       "name": "./node_modules/aws-sdk/lib/model/shape.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "wlxu",
+      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/model/shape.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
@@ -10087,6 +10021,32 @@
     {
       "id": "PO9o",
       "name": "./node_modules/graphql/language/location.js",
+      "file": "10.1f3d8d94108cfee20f2f.js.map",
+      "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js.map"
+    }
+  ],
+  "./error": [
+    {
+      "id": "PUII",
+      "name": "./node_modules/graphql/error/index.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "PUII",
+      "name": "./node_modules/graphql/error/index.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "PUII",
+      "name": "./node_modules/graphql/error/index.js",
+      "file": "10.1f3d8d94108cfee20f2f.js",
+      "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js"
+    },
+    {
+      "id": "PUII",
+      "name": "./node_modules/graphql/error/index.js",
       "file": "10.1f3d8d94108cfee20f2f.js.map",
       "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js.map"
     }
@@ -11187,7 +11147,7 @@
       "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js.map"
     }
   ],
-  "./TypeInfo": [
+  "../utilities/TypeInfo": [
     {
       "id": "Uh8e",
       "name": "./node_modules/graphql/utilities/TypeInfo.js",
@@ -11503,12 +11463,6 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
     },
     {
-      "id": "wlxu",
-      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/model/shape.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
       "id": "WdWd",
       "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/model/shape.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
@@ -11517,12 +11471,6 @@
     {
       "id": "cPaK",
       "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/model/shape.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    },
-    {
-      "id": "wlxu",
-      "name": "./node_modules/@aws-amplify/core/node_modules/aws-sdk/lib/model/shape.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
@@ -12271,7 +12219,21 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
-  "../modules/web.dom.iterable": [
+  "../json/builder": [
+    {
+      "id": "bBuG",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/json/builder.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "bBuG",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/json/builder.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    }
+  ],
+  "../../modules/web.dom.iterable": [
     {
       "id": "bBy9",
       "name": "./node_modules/core-js/library/modules/web.dom.iterable.js",
@@ -12281,6 +12243,20 @@
     {
       "id": "bBy9",
       "name": "./node_modules/core-js/library/modules/web.dom.iterable.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    }
+  ],
+  "../json/parser": [
+    {
+      "id": "bICC",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/json/parser.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "bICC",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/json/parser.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
@@ -12905,20 +12881,6 @@
     {
       "id": "fpC5",
       "name": "./node_modules/core-js/library/modules/_object-dps.js",
-      "file": "index.0405bb1223f1eccc2f32.js.map",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
-    }
-  ],
-  "../signers/v4_credentials": [
-    {
-      "id": "fq1a",
-      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/signers/v4_credentials.js",
-      "file": "index.0405bb1223f1eccc2f32.js",
-      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
-    },
-    {
-      "id": "fq1a",
-      "name": "./node_modules/@aws-amplify/storage/node_modules/aws-sdk/lib/signers/v4_credentials.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
@@ -14709,7 +14671,7 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
-  "./validate": [
+  "./validation/validate": [
     {
       "id": "sk25",
       "name": "./node_modules/graphql/validation/validate.js",
@@ -15383,6 +15345,32 @@
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }
   ],
+  "../language/kinds": [
+    {
+      "id": "xaK5",
+      "name": "./node_modules/graphql/language/kinds.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "xaK5",
+      "name": "./node_modules/graphql/language/kinds.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    },
+    {
+      "id": "xaK5",
+      "name": "./node_modules/graphql/language/kinds.js",
+      "file": "10.1f3d8d94108cfee20f2f.js",
+      "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js"
+    },
+    {
+      "id": "xaK5",
+      "name": "./node_modules/graphql/language/kinds.js",
+      "file": "10.1f3d8d94108cfee20f2f.js.map",
+      "publicPath": "/dist/10.1f3d8d94108cfee20f2f.js.map"
+    }
+  ],
   "./_flatRest": [
     {
       "id": "xs/l",
@@ -15555,6 +15543,20 @@
     {
       "id": "yl30",
       "name": "./node_modules/react-dom/cjs/react-dom.production.min.js",
+      "file": "index.0405bb1223f1eccc2f32.js.map",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
+    }
+  ],
+  "./json": [
+    {
+      "id": "ysw7",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/protocol/json.js",
+      "file": "index.0405bb1223f1eccc2f32.js",
+      "publicPath": "/dist/index.0405bb1223f1eccc2f32.js"
+    },
+    {
+      "id": "ysw7",
+      "name": "./node_modules/@aws-amplify/interactions/node_modules/aws-sdk/lib/protocol/json.js",
       "file": "index.0405bb1223f1eccc2f32.js.map",
       "publicPath": "/dist/index.0405bb1223f1eccc2f32.js.map"
     }

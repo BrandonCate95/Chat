@@ -20,6 +20,9 @@
   <div id="root">{{content}}</div>
   <script>
     window.__APOLLO_STATE__ = {{state}};
+    window.onLoad = function() {        
+      window.scrollTo(0,1);
+    }
   </script>
   <!-- {{initialJs}} -->
   {{loadableScripts}}
