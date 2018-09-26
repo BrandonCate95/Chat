@@ -1,7 +1,7 @@
 import React from 'react'
 import Messages from '../components/ListMessages'
 import Loadable from 'react-loadable'
-import Loading from '../Loading'
+import Loading from '../components/Loading'
 
 const LoadableTextArea = Loadable({
     loader: () => import('../mdc/TextArea'),

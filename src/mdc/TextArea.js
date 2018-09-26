@@ -1,7 +1,7 @@
 import React from 'react'
 import './TextArea.scss'
 import Loadable from 'react-loadable'
-import Loading from '../Loading'
+import Loading from '../components/Loading'
 import {MDCTextField} from '@material/textfield'
 
 const LoadableCreateMessageButton = Loadable({
@@ -36,9 +36,7 @@ class TextArea extends React.Component {
 
     componentDidMount = () => {
         if(!this.props.icon){
-            // return import(/* webpackChunkName: "textfield" */ '@material/textfield').then(({MDCTextField}) => {
-                this.textareaRipple = new MDCTextField(this.textareaContainerRef)
-            // })
+            this.textareaRipple = new MDCTextField(this.textareaContainerRef)
         }
         const textarea = this.textareaRef
         textarea.style.height = textarea.scrollHeight

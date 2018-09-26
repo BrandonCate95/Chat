@@ -7,19 +7,13 @@
   "scripts": {
     "test": "webpack -p --config webpack.prod.js --profile --json > stats.json",
     "postinstall": "npm run build",
-    "start:client": "webpack --config webpack.dev.js --progress",
     "start:lib": "better-npm-run lib-watch",
     "start:server": "better-npm-run start:server",
     "start": "npm-run-all -p start:lib start:server",
     "build:server": "babel server-env.js --out-file server.js",
     "build:client": "webpack -p --config webpack.prod.js --progress",
-    "build:client:nosw": "webpack --env=false -p --config webpack.prod.js --progress",
     "build": "better-npm-run build",
-    "build:nosw": "better-npm-run build:nosw",
-    "server": "better-npm-run server",
-    "aws:server": "NODE_ENV=production npm install && NODE_ENV=production nodemon server.js",
-    "lib": "better-npm-run lib ",
-    "transpile": "babel @material, apollo-link, react-apollo"
+    "transpile": "babel node_modules/@material -d node_modules/@material && babel node_modules/apollo-link -d node_modules/apollo-link && babel node_modules/react-apollo -d node_modules/react-apollo"
   },
   "betterScripts": {
     "start:server": {
@@ -41,7 +35,7 @@
       }
     },
     "build": {
-      "command": " npm run lib && better-npm-run build:server && npm run build:client",
+      "command": "better-npm-run lib && better-npm-run build:server && npm run build:client",
       "env": {
         "NODE_ENV": "production"
       }
@@ -51,22 +45,12 @@
       "env": {
         "BABEL_ENV": "lib"
       }
-    },
-    "start": {
-      "command": "npm run start:client && npm run start:server",
-      "env": {
-        "NODE_ENV": "dev"
-      }
-    },
-    "server": {
-      "command": "nodemon server.js",
-      "env": {
-        "NODE_ENV": "production"
-      }
     }
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "chat"
+  ],
+  "author": "Brandon Cate",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.1.1",
@@ -88,7 +72,6 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "babel-plugin-import": "^1.8.0",
-    "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-react-css-modules": "^3.4.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",

@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
-import style from './style.scss'
-// import routes from './Routes'
-import Header from './Header'
+import style from './App.scss'
+import Header from './components/Header'
 import Loadable from 'react-loadable'
-import Loading from './Loading'
+import Loading from './components/Loading'
 
 const LoadableHome = Loadable({
     loader: () => import('./pages/Home'),
