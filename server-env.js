@@ -3,6 +3,7 @@ import path from 'path'
 import express from 'express'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
 import React from 'react'
 import { StaticRouter } from 'react-router'
 import ReactDOMServer from 'react-dom/server'
@@ -34,18 +35,24 @@ app.set("port", process.env.PORT || DEFAULT_PORT);
 if (isDevelopment) {
 	console.log('in development')
 
-	const compiler = webpack(config);
-	
-	app.use(webpackDevMiddleware(compiler, {
-		publicPath: config.output.publicPath
-	}));
+	const compiler = webpack(config)
+
+	// app.use(webpackDevMiddleware(compiler, {
+	// 	publicPath: config.output.publicPath
+	// }))
+
+	app.use(require("webpack-dev-middleware")(compiler, {
+		noInfo: true, publicPath: config.output.publicPath
+	}))
+
+	app.use(require("webpack-hot-middleware")(compiler));
 
 	app.get("/*", async (req, res, next) => {
 		var loadable = fs.readFileSync(LOADABLE_JSON, 'utf8')
 		loadable = JSON.parse(loadable)
 		const template = compiler.outputFileSystem.readFileSync(HTML_FILE, 'utf8')
 		sendRes(req, res, template, loadable)
-	});
+	})
 }
 
 else {

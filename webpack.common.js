@@ -8,10 +8,10 @@ const { ReactLoadablePlugin } = require("react-loadable/webpack")
 
 const devMode = process.env.NODE_ENV == 'dev'
 module.exports = {
-  entry: {
-    index: './src/index.js',
-    app: './src/App.js'
-  },
+  // entry: {
+  //   index: './src/index.js',
+  //   app: './src/App.js'
+  // },
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
@@ -47,8 +47,8 @@ module.exports = {
     // }),
   ],
   output: {
-    filename: '[name].[contenthash].js',
-    chunkFilename: '[name].[contenthash].js',
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/'
   },

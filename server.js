@@ -24,6 +24,10 @@ var _webpackDevMiddleware = require('webpack-dev-middleware');
 
 var _webpackDevMiddleware2 = _interopRequireDefault(_webpackDevMiddleware);
 
+var _webpackHotMiddleware = require('webpack-hot-middleware');
+
+var _webpackHotMiddleware2 = _interopRequireDefault(_webpackHotMiddleware);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -98,9 +102,15 @@ if (isDevelopment) {
 
 	var compiler = (0, _webpack2.default)(_webpackDev2.default);
 
-	app.use((0, _webpackDevMiddleware2.default)(compiler, {
-		publicPath: _webpackDev2.default.output.publicPath
+	// app.use(webpackDevMiddleware(compiler, {
+	// 	publicPath: config.output.publicPath
+	// }))
+
+	app.use(require("webpack-dev-middleware")(compiler, {
+		noInfo: true, publicPath: _webpackDev2.default.output.publicPath
 	}));
+
+	app.use(require("webpack-hot-middleware")(compiler));
 
 	app.get("/*", function () {
 		var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee(req, res, next) {

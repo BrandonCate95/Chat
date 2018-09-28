@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
+import { hot } from 'react-hot-loader'
 import style from './App.scss'
 import Header from './components/Header'
 import Loadable from 'react-loadable'
@@ -37,4 +38,9 @@ const App = ({username = username || window.__USERNAME__}) => (
     </div>
 )
 
-export default App
+function chooseHot(comp){
+    if(module.hot) return hot(module)(comp)
+    else return comp
+}
+
+export default chooseHot(App)

@@ -40,7 +40,7 @@ const WithProvider = () => (
 )
 
 Loadable.preloadReady().then(() => {
-    ReactDOM.render(<WithProvider />, document.getElementById('root'));
+    ReactDOM.hydrate(<WithProvider />, document.getElementById('root'));
 });
 
 // if ('serviceWorker' in navigator) {

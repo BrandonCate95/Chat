@@ -97,6 +97,7 @@
         "lib_dev": {
             "presets": [["env"], "react"],
             "plugins": [
+                "react-hot-loader/babel",
                 "syntax-dynamic-import",
                 "dynamic-import-node",
                 "transform-object-rest-spread", 
