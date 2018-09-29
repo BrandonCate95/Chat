@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
-import { hot } from 'react-hot-loader'
 import style from './App.scss'
 import Header from './components/Header'
 import Loadable from 'react-loadable'
@@ -39,7 +38,10 @@ const App = ({username = username || window.__USERNAME__}) => (
 )
 
 function chooseHot(comp){
-    if(module.hot) return hot(module)(comp)
+    if(module.hot){
+        const hot = require('react-hot-loader').hot
+        return hot(module)(comp)
+    } 
     else return comp
 }
 
