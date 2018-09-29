@@ -7,7 +7,7 @@ import MessagesContainer from './MessagesContainer'
 const ListMessages = () => (
     <Query 
       query={LIST_MESSAGES} 
-      variables={{ conversation: "main", count: 10 }} 
+      variables={{ conversation: "main", count: 8 }} 
       ssr={true}
     >
       {({ loading, error, data, subscribeToMore, fetchMore, networkStatus }) => {
@@ -23,7 +23,7 @@ const ListMessages = () => (
               fetchMore({
                 variables: {
                   conversation: 'main',
-                  count: 10,
+                  count: 8,
                   nextToken
                 },
                 updateQuery: (prev, { fetchMoreResult }) => {

@@ -10,19 +10,15 @@ import { Rehydrated } from 'aws-appsync-react'
 import { ApolloProvider } from 'react-apollo'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
-// import Amplify from 'aws-amplify'
-// Amplify.configure(awsmobile)    
-
-import(/* webpackChunkName: "aws-amplify" */ 'aws-amplify').then((Amplify) => {
-    Amplify.configure(awsmobile)    
-})
+import Amplify from 'aws-amplify'
+Amplify.configure(awsmobile)    
 
 const client = new AWSAppSyncClient({
     url: AppSync.graphqlEndpoint,
     region: AppSync.region,
     auth: {
         type: AppSync.authenticationType,
-        apiKey: AppSync.apiKey,
+        credentials: async () => await Amplify.Auth.currentCredentials(),
     }
 })
 // this initializes store.cache with server data

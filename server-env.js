@@ -72,14 +72,14 @@ else {
 
 function sendRes(req, res, template, loadable) {
 	let context = {}
-	let modules = [];
+	let modules = []
 
 	const client = new AWSAppSyncClient({
         url: AppSync.graphqlEndpoint,
         region: AppSync.region,
         auth: {
             type: AppSync.authenticationType,
-            apiKey: AppSync.apiKey,
+			credentials: async () => await Amplify.Auth.currentCredentials(),
         }
 	});
 	client.ssrMode = true // appsync client dosent allow for ssrmod option so this is best option
