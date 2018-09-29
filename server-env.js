@@ -2,8 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import express from 'express'
 import webpack from 'webpack'
-import webpackDevMiddleware from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
 import React from 'react'
 import { StaticRouter } from 'react-router'
 import ReactDOMServer from 'react-dom/server'
@@ -88,7 +86,7 @@ function sendRes(req, res, template, loadable) {
 
 	const username = req.session.user || `guest${Math.random().toString().slice(2,10)}`
 	req.session.user = username
-	
+
 	let reactDom = (
 		<Loadable.Capture report={moduleName => modules.push(moduleName)}>
 			<ApolloProvider client={client}>
