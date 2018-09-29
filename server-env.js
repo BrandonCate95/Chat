@@ -12,6 +12,7 @@ import Loadable from 'react-loadable'
 import App from './lib/App'
 import { getBundles } from 'react-loadable/webpack'
 import stats from './react-loadable.json'
+import session from 'client-sessions'
 
 import 'cross-fetch/polyfill'
 import ApolloProvider from 'react-apollo/ApolloProvider'
@@ -30,16 +31,19 @@ const LOADABLE_JSON = path.join(__dirname, "react-loadable.json")
 const isDevelopment  = app.get('env') === "dev"
 const DEFAULT_PORT = 3000
 
-app.set("port", process.env.PORT || DEFAULT_PORT);
+app.set("port", process.env.PORT || DEFAULT_PORT)
+
+app.use(session({
+	cookieName: 'session',
+	secret: 'random_string_goes_here',
+	duration: 30 * 60 * 1000,
+	activeDuration: 5 * 60 * 1000,
+}))
 
 if (isDevelopment) {
 	console.log('in development')
 
 	const compiler = webpack(config)
-
-	// app.use(webpackDevMiddleware(compiler, {
-	// 	publicPath: config.output.publicPath
-	// }))
 
 	app.use(require("webpack-dev-middleware")(compiler, {
 		noInfo: true, publicPath: config.output.publicPath
@@ -82,7 +86,9 @@ function sendRes(req, res, template, loadable) {
 	});
 	client.ssrMode = true // appsync client dosent allow for ssrmod option so this is best option
 
-	const username = `guest${Math.random().toString().slice(2,10)}`
+	const username = req.session.user || `guest${Math.random().toString().slice(2,10)}`
+	req.session.user = username
+	
 	let reactDom = (
 		<Loadable.Capture report={moduleName => modules.push(moduleName)}>
 			<ApolloProvider client={client}>

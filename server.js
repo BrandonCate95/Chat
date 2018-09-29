@@ -56,6 +56,10 @@ var _reactLoadable3 = require('./react-loadable.json');
 
 var _reactLoadable4 = _interopRequireDefault(_reactLoadable3);
 
+var _clientSessions = require('client-sessions');
+
+var _clientSessions2 = _interopRequireDefault(_clientSessions);
+
 require('cross-fetch/polyfill');
 
 var _ApolloProvider = require('react-apollo/ApolloProvider');
@@ -97,14 +101,17 @@ var DEFAULT_PORT = 3000;
 
 app.set("port", process.env.PORT || DEFAULT_PORT);
 
+app.use((0, _clientSessions2.default)({
+	cookieName: 'session',
+	secret: 'random_string_goes_here',
+	duration: 30 * 60 * 1000,
+	activeDuration: 5 * 60 * 1000
+}));
+
 if (isDevelopment) {
 	console.log('in development');
 
 	var compiler = (0, _webpack2.default)(_webpackDev2.default);
-
-	// app.use(webpackDevMiddleware(compiler, {
-	// 	publicPath: config.output.publicPath
-	// }))
 
 	app.use(require("webpack-dev-middleware")(compiler, {
 		noInfo: true, publicPath: _webpackDev2.default.output.publicPath
@@ -171,7 +178,9 @@ function sendRes(req, res, template, loadable) {
 	});
 	client.ssrMode = true; // appsync client dosent allow for ssrmod option so this is best option
 
-	var username = 'guest' + Math.random().toString().slice(2, 10);
+	var username = req.session.user || 'guest' + Math.random().toString().slice(2, 10);
+	req.session.user = username;
+
 	var reactDom = _react2.default.createElement(
 		_reactLoadable2.default.Capture,
 		{ report: function report(moduleName) {
