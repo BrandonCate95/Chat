@@ -19,8 +19,9 @@ import AWSAppSyncClient from 'aws-appsync'
 import AppSync from './lib/AppSync'
 
 import awsmobile from './lib/aws-exports'
+import awsauth from './lib/aws-auth-exports'
 import Amplify from 'aws-amplify'
-Amplify.configure(awsmobile)    
+Amplify.configure({ ...awsmobile, Auth: awsauth })    
 
 const app = express()
 const DIST_DIR = path.join(__dirname, "dist")
@@ -31,12 +32,20 @@ const DEFAULT_PORT = 3000
 
 app.set("port", process.env.PORT || DEFAULT_PORT)
 
-app.use(session({
-	cookieName: 'session',
-	secret: 'random_string_goes_here',
-	duration: 30 * 60 * 1000,
-	activeDuration: 5 * 60 * 1000,
-}))
+// app.use(session({
+// 	cookieName: 'session',
+// 	secret: 'random_string_goes_here',
+// 	duration: 30 * 60 * 1000,
+// 	activeDuration: 5 * 60 * 1000,
+// }))
+
+app.use(express.json())
+
+// API CALLS
+app.post('/api/hello', (req, res) => {
+	console.log(req.body)
+	res.json(req.body)
+})
 
 if (isDevelopment) {
 	console.log('in development')
@@ -84,8 +93,8 @@ function sendRes(req, res, template, loadable) {
 	});
 	client.ssrMode = true // appsync client dosent allow for ssrmod option so this is best option
 
-	const username = req.session.user || `guest${Math.random().toString().slice(2,10)}`
-	req.session.user = username
+	const username = /* req.session.user || */ `guest${Math.random().toString().slice(2,10)}`
+	// req.session.user = username
 
 	let reactDom = (
 		<Loadable.Capture report={moduleName => modules.push(moduleName)}>

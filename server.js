@@ -4,6 +4,9 @@ var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+// import bodyParser from 'body-parser'
+
 var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
@@ -72,6 +75,10 @@ var _awsExports = require('./lib/aws-exports');
 
 var _awsExports2 = _interopRequireDefault(_awsExports);
 
+var _awsAuthExports = require('./lib/aws-auth-exports');
+
+var _awsAuthExports2 = _interopRequireDefault(_awsAuthExports);
+
 var _awsAmplify = require('aws-amplify');
 
 var _awsAmplify2 = _interopRequireDefault(_awsAmplify);
@@ -82,7 +89,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-_awsAmplify2.default.configure(_awsExports2.default);
+_awsAmplify2.default.configure(_extends({}, _awsExports2.default, { Auth: _awsAuthExports2.default }));
 
 var app = (0, _express2.default)();
 var DIST_DIR = _path2.default.join(__dirname, "dist");
@@ -93,12 +100,22 @@ var DEFAULT_PORT = 3000;
 
 app.set("port", process.env.PORT || DEFAULT_PORT);
 
-app.use((0, _clientSessions2.default)({
-	cookieName: 'session',
-	secret: 'random_string_goes_here',
-	duration: 30 * 60 * 1000,
-	activeDuration: 5 * 60 * 1000
-}));
+// app.use(session({
+// 	cookieName: 'session',
+// 	secret: 'random_string_goes_here',
+// 	duration: 30 * 60 * 1000,
+// 	activeDuration: 5 * 60 * 1000,
+// }))
+
+app.use(_express2.default.json());
+
+// API CALLS
+app.post('/api/hello', function (req, res) {
+	console.log(req.body);
+	console.log(req.payload);
+	// console.log(res)
+	res.json(req.body);
+});
 
 if (isDevelopment) {
 	console.log('in development');
@@ -197,8 +214,8 @@ function sendRes(req, res, template, loadable) {
 	});
 	client.ssrMode = true; // appsync client dosent allow for ssrmod option so this is best option
 
-	var username = req.session.user || 'guest' + Math.random().toString().slice(2, 10);
-	req.session.user = username;
+	var username = /* req.session.user || */'guest' + Math.random().toString().slice(2, 10);
+	// req.session.user = username
 
 	var reactDom = _react2.default.createElement(
 		_reactLoadable2.default.Capture,

@@ -5,13 +5,14 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import AppSync from './AppSync'
 import awsmobile from './aws-exports'
+import awsauth from './aws-auth-exports'
 import AWSAppSyncClient from 'aws-appsync'
 import { Rehydrated } from 'aws-appsync-react'
 import { ApolloProvider } from 'react-apollo'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 import Amplify from 'aws-amplify'
-Amplify.configure(awsmobile)    
+Amplify.configure({ ...awsmobile, Auth: awsauth }) 
 
 const client = new AWSAppSyncClient({
     url: AppSync.graphqlEndpoint,
