@@ -1,9 +1,13 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
-import style from './App.scss'
-import Header from './components/Header'
+import './App.scss'
 import Loadable from 'react-loadable'
 import Loading from './components/Loading'
+
+const LoadableHeader = Loadable({
+    loader: () => import('./components/Header'),
+    loading: Loading
+})
 
 const LoadableHome = Loadable({
     loader: () => import('./pages/Home'),
@@ -23,8 +27,8 @@ const LoadableContact = Loadable({
 const App = ({username = username || window.__USERNAME__}) => (
     <div className="container" style={{height: '100vh'}}>
         <div className="row justify-content-md-center" style={{height: '100vh'}}>
-            <div className="col col-md-8 col-lg-6" styleName="style.hello" style={{padding: '0', display: 'flex', flexDirection: 'column', maxHeight: '100vh', minHeight: '0'}}>
-                <Header
+            <div className="col col-md-8 col-lg-6" style={{padding: '0', display: 'flex', flexDirection: 'column', maxHeight: '100vh', minHeight: '0'}}>
+                <LoadableHeader
                     username={username}
                 />
                 <Switch>

@@ -5,7 +5,6 @@ var _regenerator = require('babel-runtime/regenerator');
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-// import bodyParser from 'body-parser'
 
 var _fs = require('fs');
 
@@ -100,20 +99,18 @@ var DEFAULT_PORT = 3000;
 
 app.set("port", process.env.PORT || DEFAULT_PORT);
 
-// app.use(session({
-// 	cookieName: 'session',
-// 	secret: 'random_string_goes_here',
-// 	duration: 30 * 60 * 1000,
-// 	activeDuration: 5 * 60 * 1000,
-// }))
+app.use((0, _clientSessions2.default)({
+	cookieName: 'session',
+	secret: 'random_string_goes_here',
+	duration: 30 * 60 * 1000,
+	activeDuration: 5 * 60 * 1000
+}));
 
 app.use(_express2.default.json());
 
 // API CALLS
-app.post('/api/hello', function (req, res) {
-	console.log(req.body);
-	console.log(req.payload);
-	// console.log(res)
+app.post('/api/set_auth', function (req, res) {
+	req.session.authenticated = req.body.authenticated;
 	res.json(req.body);
 });
 
@@ -214,8 +211,8 @@ function sendRes(req, res, template, loadable) {
 	});
 	client.ssrMode = true; // appsync client dosent allow for ssrmod option so this is best option
 
-	var username = /* req.session.user || */'guest' + Math.random().toString().slice(2, 10);
-	// req.session.user = username
+	var username = req.session.user || 'guest' + Math.random().toString().slice(2, 10);
+	req.session.user = username;
 
 	var reactDom = _react2.default.createElement(
 		_reactLoadable2.default.Capture,
@@ -239,7 +236,10 @@ function sendRes(req, res, template, loadable) {
 		var initialState = client.extract();
 
 		var bundles = (0, _webpack3.getBundles)(loadable ? loadable : _reactLoadable4.default, modules);
-		// let styles = bundles.filter(bundle => bundle.file.endsWith('.css'));
+		var styles = bundles.filter(function (bundle) {
+			return bundle.file.endsWith('.css');
+		});
+		console.log(styles);
 		var scripts = bundles.filter(function (bundle) {
 			return bundle.file.endsWith('.js');
 		});

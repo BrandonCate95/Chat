@@ -26,29 +26,18 @@ class Home extends React.Component {
     
     componentDidMount() {
         this.callApi()
-            // .then(res => console.log(res.express))
-            // .catch(err => console.log(err))
     }
     
     callApi = async () => {
-        Auth.currentCredentials().then(session => console.log(session))
+        const authenticated = (await Auth.currentCredentials()).authenticated
 
-        fetch("/api/hello", {
+        fetch("/api/set_auth", {
             method: 'POST',
             body: JSON.stringify({
-              task: 'some task'
+                authenticated
             }),
             headers: {"Content-Type": "application/json"}
-        }).then(res => {
-            console.log("Request complete! response:", res.json().then(data => console.log(data)))
         })
-
-        // const response = await fetch('/api/hello')
-        // const body = await response.json()
-    
-        // if (response.status !== 200) throw Error(body.message)
-    
-        // return body
     }
 
     render(){

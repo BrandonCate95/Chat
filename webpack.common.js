@@ -61,7 +61,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'bundle.css',
+              name: devMode ? '[name].css' : '[name].[hash].css',
             },
           },
           { loader: 'extract-loader' },

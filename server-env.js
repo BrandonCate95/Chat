@@ -32,18 +32,18 @@ const DEFAULT_PORT = 3000
 
 app.set("port", process.env.PORT || DEFAULT_PORT)
 
-// app.use(session({
-// 	cookieName: 'session',
-// 	secret: 'random_string_goes_here',
-// 	duration: 30 * 60 * 1000,
-// 	activeDuration: 5 * 60 * 1000,
-// }))
+app.use(session({
+	cookieName: 'session',
+	secret: 'random_string_goes_here',
+	duration: 30 * 60 * 1000,
+	activeDuration: 5 * 60 * 1000,
+}))
 
 app.use(express.json())
 
 // API CALLS
-app.post('/api/hello', (req, res) => {
-	console.log(req.body)
+app.post('/api/set_auth', (req, res) => {
+	req.session.authenticated = req.body.authenticated
 	res.json(req.body)
 })
 
@@ -93,8 +93,8 @@ function sendRes(req, res, template, loadable) {
 	});
 	client.ssrMode = true // appsync client dosent allow for ssrmod option so this is best option
 
-	const username = /* req.session.user || */ `guest${Math.random().toString().slice(2,10)}`
-	// req.session.user = username
+	const username = req.session.user || `guest${Math.random().toString().slice(2,10)}`
+	req.session.user = username
 
 	let reactDom = (
 		<Loadable.Capture report={moduleName => modules.push(moduleName)}>
@@ -112,8 +112,9 @@ function sendRes(req, res, template, loadable) {
 		const initialState = client.extract()
 
 		const bundles = getBundles(loadable ? loadable : stats, modules);
-		// let styles = bundles.filter(bundle => bundle.file.endsWith('.css'));
-		let scripts = bundles.filter(bundle => bundle.file.endsWith('.js'));
+		let styles = bundles.filter(bundle => bundle.file.endsWith('.css'))
+		console.log(styles)
+		let scripts = bundles.filter(bundle => bundle.file.endsWith('.js'))
 		let uniqueScripts = [... new Set(scripts)] // removes any duplicates
 
 		const html = template
