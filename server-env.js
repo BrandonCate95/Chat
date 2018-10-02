@@ -11,6 +11,7 @@ import App from './lib/App'
 import { getBundles } from 'react-loadable/webpack'
 import stats from './react-loadable.json'
 import session from 'client-sessions'
+import api from './api'
 
 import 'cross-fetch/polyfill'
 import ApolloProvider from 'react-apollo/ApolloProvider'
@@ -42,10 +43,7 @@ app.use(session({
 app.use(express.json())
 
 // API CALLS
-app.post('/api/set_auth', (req, res) => {
-	req.session.authenticated = req.body.authenticated
-	res.json(req.body)
-})
+app.use('/api', api)
 
 if (isDevelopment) {
 	console.log('in development')
