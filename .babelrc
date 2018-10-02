@@ -34,14 +34,6 @@
             "camel2DashComponentName": false,
             "style": false
         }, "@aws-amplify"],
-        ["react-css-modules",{
-            "generateScopedName": "[name]_[local]_[hash:base64]",
-            "filetypes": {
-                ".scss": {
-                  "syntax": "postcss-scss"
-                }
-            }
-        }],
         "react-loadable/babel"
     ],
     "env": {

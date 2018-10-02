@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'development',
-  entry: ['./src/index.js', './src/App.js', 'webpack-hot-middleware/client'],
+  // entry: ['./src/index.js', './src/App.js', 'webpack-hot-middleware/client'],
   // entry: {
   //   index: ['./src/index.js', 'webpack-hot-middleware/client'],
   //   app: ['./src/App.js', 'webpack-hot-middleware/client']

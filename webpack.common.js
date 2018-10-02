@@ -20,6 +20,12 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           minChunks: 3
+        },
+        styles: {
+          name: 'styles',
+          test: /\.scss$/,
+          chunks: 'all',
+          enforce: true
         }
       }
     }
@@ -59,13 +65,22 @@ module.exports = {
         include: path.resolve(__dirname, './src'),
         use: [
           {
-            loader: 'file-loader',
-            options: {
-              name: devMode ? '[name].css' : '[name].[hash].css',
-            },
+            loader: MiniCssExtractPlugin.loader,
           },
-          { loader: 'extract-loader' },
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     name: 'bundle.css',
+          //   },
+          // },
+          // { loader: 'extract-loader' },
           { loader: 'css-loader' },
+          // { 
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     options: {}
+          //   }
+          // },
           {
             loader: 'sass-loader',
             options: {
