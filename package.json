@@ -12,9 +12,15 @@
     "build:server": "babel server-env.js --out-file server.js",
     "build:client": "webpack -p --config webpack.prod.js --progress",
     "build": "better-npm-run build",
-    "transpile": "babel node_modules/@material -d node_modules/@material && babel node_modules/apollo-link -d node_modules/apollo-link && babel node_modules/react-apollo -d node_modules/react-apollo"
+    "transpile": "better-npm-run transpile"
   },
   "betterScripts": {
+    "transpile": {
+      "command": "babel node_modules/@material -d node_modules/@material && babel node_modules/apollo-link -d node_modules/apollo-link && babel node_modules/react-apollo -d node_modules/react-apollo",
+      "env": {
+        "BABEL_ENV": "transpile"
+      }
+    },
     "start:server": {
       "command": "nodemon server-env.js --ignore lib --ignore dist --watch server-env.js --exec babel-node --presets env,react",
       "env": {
@@ -93,12 +99,13 @@
     "graphql-tag": "^2.9.2",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.1",
+    "module-alias": "^2.1.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
     "postcss-scss": "^2.0.0",
     "react": "^16.4.2",
-    "react-apollo": "^2.1.11",
+    "react-apollo": "^2.2.4",
     "react-dom": "^16.4.2",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^4.3.1",

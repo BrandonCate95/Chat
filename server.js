@@ -54,6 +54,10 @@ var _clientSessions = require('client-sessions');
 
 var _clientSessions2 = _interopRequireDefault(_clientSessions);
 
+var _api = require('./api');
+
+var _api2 = _interopRequireDefault(_api);
+
 require('cross-fetch/polyfill');
 
 var _ApolloProvider = require('react-apollo/ApolloProvider');
@@ -109,10 +113,7 @@ app.use((0, _clientSessions2.default)({
 app.use(_express2.default.json());
 
 // API CALLS
-app.post('/api/set_auth', function (req, res) {
-	req.session.authenticated = req.body.authenticated;
-	res.json(req.body);
-});
+app.use('/api', _api2.default);
 
 if (isDevelopment) {
 	console.log('in development');
