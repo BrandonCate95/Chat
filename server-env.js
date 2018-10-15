@@ -11,7 +11,6 @@ import { getBundles } from 'react-loadable/webpack'
 import stats from './react-loadable.json'
 import session from 'client-sessions'
 import api from './api'
-import compression from 'compression'
 
 import 'cross-fetch/polyfill'
 import ApolloProvider from 'react-apollo/ApolloProvider'
@@ -74,18 +73,9 @@ else {
 	let initialJs = initialScripts.map(script => fs.readFileSync(path.join(__dirname, "dist", script), 'utf8') ).join(' ')
 
 	app.use('/dist', express.static(DIST_DIR));
-	app.use(compression({
-		level: 6,               // set compression level from 1 to 9 (6 by default)
-		filter: shouldCompress, // set predicate to determine whether to compress
-	}));
 
 	app.get("/*", (req, res) => sendRes(req, res, template) );
 }
-
-function shouldCompress(req, res) {
-	if (req.headers["x-no-compression"]) return false;
-	return compression.filter(req, res);
-  }
 
 function sendRes(req, res, template, loadable) {
 	let context = {}

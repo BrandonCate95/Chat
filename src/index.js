@@ -1,26 +1,23 @@
 import React from 'react'
-import Loadable from 'react-loadable'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { hydrate } from 'react-dom'
 import App from './App'
 import AppSync from './AppSync'
 import awsmobile from './aws-exports'
 import awsauth from './aws-auth-exports'
-import AWSAppSyncClient from 'aws-appsync'
-import { Rehydrated } from 'aws-appsync-react'
-import { ApolloProvider } from 'react-apollo'
-import { InMemoryCache } from 'apollo-cache-inmemory'
 
-// import Auth from '@aws-amplify/auth/lib'
-// import Amplify from '@aws-amplify/core/lib'
-var client = null
 !async function(){
+    const { default: Loadable } = await import(/* webpackChunkName: "loadable" */ 'react-loadable')
+    const { BrowserRouter } = await import(/* webpackChunkName: "react-router-dom" */ 'react-router-dom')
+    const { hydrate } = await import(/* webpackChunkName: "react-dom" */ 'react-dom')
+    const { Rehydrated } = await import(/* webpackChunkName: "aws-appsync-react" */ 'aws-appsync-react')
+    const { ApolloProvider } = await import(/* webpackChunkName: "react-apollo" */ 'react-apollo')
     const { default: Amplify } = await import(/* webpackChunkName: "amplify" */ '@aws-amplify/core')
     const { default: Auth } = await import(/* webpackChunkName: "auth" */ '@aws-amplify/auth')
+    const { default: AWSAppSyncClient } = await import(/* webpackChunkName: "AWSAppSyncClient" */ 'aws-appsync')
+    const { InMemoryCache } = await import(/* webpackChunkName: "apollo-cache-inmemory" */ 'apollo-cache-inmemory')
 
     Amplify.configure({ ...awsmobile, Auth: awsauth }) 
 
-    client = new AWSAppSyncClient({
+    const client = new AWSAppSyncClient({
         url: AppSync.graphqlEndpoint,
         region: AppSync.region,
         auth: {
@@ -31,24 +28,20 @@ var client = null
     // this initializes store.cache with server data
     client.store.cache = new InMemoryCache().restore(window.__APOLLO_STATE__)
 
-    init()
-}()
-
-function init(){
     const WithProvider = () => (
         <ApolloProvider client={client}>
             <Rehydrated> 
-                <Router>
+                <BrowserRouter>
                     <App />
-                </Router>
+                </BrowserRouter>
             </Rehydrated>
         </ApolloProvider>
     )
     
     Loadable.preloadReady().then(() => {
-        hydrate(<WithProvider />, document.getElementById('root'));
-    });
-}
+        hydrate(<WithProvider />, document.getElementById('root'))
+    })
+}()
 
 // if ('serviceWorker' in navigator) {
 //     window.addEventListener('load', () => {

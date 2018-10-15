@@ -54,10 +54,6 @@ var _api = require('./api');
 
 var _api2 = _interopRequireDefault(_api);
 
-var _compression = require('compression');
-
-var _compression2 = _interopRequireDefault(_compression);
-
 require('cross-fetch/polyfill');
 
 var _ApolloProvider = require('react-apollo/ApolloProvider');
@@ -169,19 +165,10 @@ if (isDevelopment) {
 	}).join(' ');
 
 	app.use('/dist', _express2.default.static(DIST_DIR));
-	app.use((0, _compression2.default)({
-		level: 6, // set compression level from 1 to 9 (6 by default)
-		filter: shouldCompress // set predicate to determine whether to compress
-	}));
 
 	app.get("/*", function (req, res) {
 		return sendRes(req, res, template);
 	});
-}
-
-function shouldCompress(req, res) {
-	if (req.headers["x-no-compression"]) return false;
-	return _compression2.default.filter(req, res);
 }
 
 function sendRes(req, res, template, loadable) {

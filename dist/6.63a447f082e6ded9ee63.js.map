@@ -1,1 +1,0 @@
-{"version":3,"file":"6.63a447f082e6ded9ee63.js","sources":["webpack:///./node_modules/react-is/index.js"],"sourcesContent":["'use strict';\n\nif (process.env.NODE_ENV === 'production') {\n  module.exports = require('./cjs/react-is.production.min.js');\n} else {\n  module.exports = require('./cjs/react-is.development.js');\n}\n"],"mappings":"AAGA","sourceRoot":""}
