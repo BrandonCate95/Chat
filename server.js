@@ -28,10 +28,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = require('react-router');
 
-var _server = require('react-dom/server');
-
-var _server2 = _interopRequireDefault(_server);
-
 var _webpackDev = require('./webpack.dev.js');
 
 var _webpackDev2 = _interopRequireDefault(_webpackDev);
@@ -58,6 +54,10 @@ var _api = require('./api');
 
 var _api2 = _interopRequireDefault(_api);
 
+var _compression = require('compression');
+
+var _compression2 = _interopRequireDefault(_compression);
+
 require('cross-fetch/polyfill');
 
 var _ApolloProvider = require('react-apollo/ApolloProvider');
@@ -82,9 +82,13 @@ var _awsAuthExports = require('./lib/aws-auth-exports');
 
 var _awsAuthExports2 = _interopRequireDefault(_awsAuthExports);
 
-var _awsAmplify = require('aws-amplify');
+var _lib = require('@aws-amplify/auth/lib');
 
-var _awsAmplify2 = _interopRequireDefault(_awsAmplify);
+var _lib2 = _interopRequireDefault(_lib);
+
+var _lib3 = require('@aws-amplify/core/lib');
+
+var _lib4 = _interopRequireDefault(_lib3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -92,7 +96,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-_awsAmplify2.default.configure(_extends({}, _awsExports2.default, { Auth: _awsAuthExports2.default }));
+_lib4.default.configure(_extends({}, _awsExports2.default, { Auth: _awsAuthExports2.default }));
 
 var app = (0, _express2.default)();
 var DIST_DIR = _path2.default.join(__dirname, "dist");
@@ -165,10 +169,19 @@ if (isDevelopment) {
 	}).join(' ');
 
 	app.use('/dist', _express2.default.static(DIST_DIR));
+	app.use((0, _compression2.default)({
+		level: 6, // set compression level from 1 to 9 (6 by default)
+		filter: shouldCompress // set predicate to determine whether to compress
+	}));
 
 	app.get("/*", function (req, res) {
 		return sendRes(req, res, template);
 	});
+}
+
+function shouldCompress(req, res) {
+	if (req.headers["x-no-compression"]) return false;
+	return _compression2.default.filter(req, res);
 }
 
 function sendRes(req, res, template, loadable) {
@@ -189,7 +202,7 @@ function sendRes(req, res, template, loadable) {
 							switch (_context2.prev = _context2.next) {
 								case 0:
 									_context2.next = 2;
-									return _awsAmplify2.default.Auth.currentCredentials();
+									return _lib2.default.currentCredentials();
 
 								case 2:
 									return _context2.abrupt('return', _context2.sent);
@@ -240,7 +253,6 @@ function sendRes(req, res, template, loadable) {
 		var styles = bundles.filter(function (bundle) {
 			return bundle.file.endsWith('.css');
 		});
-		console.log(styles);
 		var scripts = bundles.filter(function (bundle) {
 			return bundle.file.endsWith('.js');
 		});

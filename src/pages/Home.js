@@ -2,7 +2,7 @@ import React from 'react'
 import Messages from '../components/ListMessages'
 import Loadable from 'react-loadable'
 import Loading from '../components/Loading'
-import { Auth } from 'aws-amplify'
+// import Auth from '@aws-amplify/auth/lib'
 
 const LoadableTextArea = Loadable({
     loader: () => import('../mdc/TextArea'),
@@ -29,15 +29,17 @@ class Home extends React.Component {
     }
     
     callApi = async () => {
-        const authenticated = (await Auth.currentCredentials()).authenticated
+        // console.log(Auth)
+        // console.log(await Auth.currentCredentials())
+        // const authenticated = (await Auth.currentCredentials()).authenticated
 
-        fetch("/api/set_auth", {
-            method: 'POST',
-            body: JSON.stringify({
-                authenticated
-            }),
-            headers: {"Content-Type": "application/json"}
-        })
+        // fetch("/api/set_auth", {
+        //     method: 'POST',
+        //     body: JSON.stringify({
+        //         authenticated
+        //     }),
+        //     headers: {"Content-Type": "application/json"}
+        // })
     }
 
     render(){

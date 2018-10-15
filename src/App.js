@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import './App.scss'
 import Loadable from 'react-loadable'
 import Loading from './components/Loading'

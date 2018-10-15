@@ -4,7 +4,6 @@ import express from 'express'
 import webpack from 'webpack'
 import React from 'react'
 import { StaticRouter } from 'react-router'
-import ReactDOMServer from 'react-dom/server'
 import config from './webpack.dev.js'
 import Loadable from 'react-loadable'
 import App from './lib/App'
@@ -12,6 +11,7 @@ import { getBundles } from 'react-loadable/webpack'
 import stats from './react-loadable.json'
 import session from 'client-sessions'
 import api from './api'
+import compression from 'compression'
 
 import 'cross-fetch/polyfill'
 import ApolloProvider from 'react-apollo/ApolloProvider'
@@ -21,7 +21,8 @@ import AppSync from './lib/AppSync'
 
 import awsmobile from './lib/aws-exports'
 import awsauth from './lib/aws-auth-exports'
-import Amplify from 'aws-amplify'
+import Auth from '@aws-amplify/auth/lib'
+import Amplify from '@aws-amplify/core/lib'
 Amplify.configure({ ...awsmobile, Auth: awsauth })    
 
 const app = express()
@@ -73,9 +74,18 @@ else {
 	let initialJs = initialScripts.map(script => fs.readFileSync(path.join(__dirname, "dist", script), 'utf8') ).join(' ')
 
 	app.use('/dist', express.static(DIST_DIR));
+	app.use(compression({
+		level: 6,               // set compression level from 1 to 9 (6 by default)
+		filter: shouldCompress, // set predicate to determine whether to compress
+	}));
 
 	app.get("/*", (req, res) => sendRes(req, res, template) );
 }
+
+function shouldCompress(req, res) {
+	if (req.headers["x-no-compression"]) return false;
+	return compression.filter(req, res);
+  }
 
 function sendRes(req, res, template, loadable) {
 	let context = {}
@@ -86,7 +96,7 @@ function sendRes(req, res, template, loadable) {
         region: AppSync.region,
         auth: {
             type: AppSync.authenticationType,
-			credentials: async () => await Amplify.Auth.currentCredentials(),
+			credentials: async () => await Auth.currentCredentials(),
         }
 	});
 	client.ssrMode = true // appsync client dosent allow for ssrmod option so this is best option
@@ -111,7 +121,6 @@ function sendRes(req, res, template, loadable) {
 
 		const bundles = getBundles(loadable ? loadable : stats, modules);
 		let styles = bundles.filter(bundle => bundle.file.endsWith('.css'))
-		console.log(styles)
 		let scripts = bundles.filter(bundle => bundle.file.endsWith('.js'))
 		let uniqueScripts = [... new Set(scripts)] // removes any duplicates
 

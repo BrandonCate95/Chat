@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
@@ -9,9 +10,14 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = merge(common, {
   mode: 'production',
   devtool: 'cheap-module-source-map',
+  entry: {
+    index: './src/index.js',
+    app: './src/app.js'
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    // new BundleAnalyzerPlugin()
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new BundleAnalyzerPlugin()
   ],
   optimization: {
     minimizer: [

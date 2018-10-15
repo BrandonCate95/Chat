@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import MoreMenu from './MoreMenu'
+// import MoreMenu from './MoreMenu'
 
 const linkStyle = {
     color: 'rgba(255,255,255,0.9)', 
@@ -23,7 +23,7 @@ const Header = ({username}) => (
                 textAlign: 'start'
             }}><i className="fas fa-home"></i></Link>
             <div style={{marginTop: '4px'}}>
-                <MoreMenu />
+                {/* <MoreMenu /> */}
                 <Link to="/About" style={linkStyle}>About</Link>
                 <Link to="/Contact" style={linkStyle}>Contact</Link>
             </div>            

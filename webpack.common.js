@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const { ReactLoadablePlugin } = require("react-loadable/webpack")
+const CompressionPlugin = require("compression-webpack-plugin");
 // const WorkboxPlugin = require('workbox-webpack-plugin')
 
 const devMode = process.env.NODE_ENV == 'dev'
@@ -19,7 +20,7 @@ module.exports = {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          minChunks: 3
+          minChunks: Infinity
         },
         styles: {
           name: 'styles',
@@ -44,7 +45,8 @@ module.exports = {
     }),
     new ReactLoadablePlugin({
         filename: path.resolve(__dirname, 'react-loadable.json'),
-    })
+    }),
+    new CompressionPlugin()
     // new WorkboxPlugin.GenerateSW({
     //   // these options encourage the ServiceWorkers to get in there fast 
     //   // and not allow any straggling "old" SWs to hang around
@@ -67,20 +69,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          // {
-          //   loader: 'file-loader',
-          //   options: {
-          //     name: 'bundle.css',
-          //   },
-          // },
-          // { loader: 'extract-loader' },
           { loader: 'css-loader' },
-          // { 
-          //   loader: 'postcss-loader',
-          //   options: {
-          //     options: {}
-          //   }
-          // },
           {
             loader: 'sass-loader',
             options: {
