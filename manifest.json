@@ -1,0 +1,21 @@
+{
+    "short_name": "Qupul",
+    "name": "Qupul",
+    "icons": [
+      {
+        "src": "/dist/small.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/dist/large.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#fff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#489687"
+}

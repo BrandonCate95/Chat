@@ -156,14 +156,8 @@ if (isDevelopment) {
 	console.log('in production');
 
 	var template = _fs2.default.readFileSync(HTML_FILE, 'utf8');
-
-	var initialScripts = _fs2.default.readdirSync(DIST_DIR).filter(function (file) {
-		return file.match('(main|runtime|vendors).*.(js$)');
-	});
-	var initialJs = initialScripts.map(function (script) {
-		return _fs2.default.readFileSync(_path2.default.join(__dirname, "dist", script), 'utf8');
-	}).join(' ');
-
+	app.use('/service-worker.js', _express2.default.static(_path2.default.join(__dirname, "service-worker.js")));
+	app.use('/manifest.json', _express2.default.static(_path2.default.join(__dirname, "manifest.json")));
 	app.use('/dist', _express2.default.static(DIST_DIR));
 
 	app.get("/*", function (req, res) {
@@ -237,15 +231,12 @@ function sendRes(req, res, template, loadable) {
 		var initialState = client.extract();
 
 		var bundles = (0, _webpack3.getBundles)(loadable ? loadable : _reactLoadable4.default, modules);
-		var styles = bundles.filter(function (bundle) {
-			return bundle.file.endsWith('.css');
-		});
 		var scripts = bundles.filter(function (bundle) {
 			return bundle.file.endsWith('.js');
 		});
 		var uniqueScripts = [].concat(_toConsumableArray(new Set(scripts))); // removes any duplicates
 
-		var html = template.replace('{{content}}', content).replace('{{username}}', username).replace('{{state}}', JSON.stringify(initialState).replace(/</g, '\\u003c')).replace('{{loadableScripts}}', uniqueScripts.map(function (script) {
+		var html = template.replace('{{content}}', content).replace('{{username}}', username).replace("'{{state}}'", JSON.stringify(initialState).replace(/</g, '\\u003c')).replace('{{loadableScripts}}', uniqueScripts.map(function (script) {
 			return '<script src="' + script.publicPath + '"></script>';
 		}).join('\n'));
 

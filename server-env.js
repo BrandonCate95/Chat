@@ -67,14 +67,12 @@ if (isDevelopment) {
 else {
 	console.log('in production')
 
-	const template = fs.readFileSync(HTML_FILE, 'utf8');
+	const template = fs.readFileSync(HTML_FILE, 'utf8')
+	app.use('/service-worker.js', express.static(path.join(__dirname, "service-worker.js")))
+	app.use('/manifest.json', express.static(path.join(__dirname, "manifest.json")))
+	app.use('/dist', express.static(DIST_DIR))
 
-	const initialScripts = fs.readdirSync(DIST_DIR).filter(file => file.match('(main|runtime|vendors).*.(js$)'))
-	let initialJs = initialScripts.map(script => fs.readFileSync(path.join(__dirname, "dist", script), 'utf8') ).join(' ')
-
-	app.use('/dist', express.static(DIST_DIR));
-
-	app.get("/*", (req, res) => sendRes(req, res, template) );
+	app.get("/*", (req, res) => sendRes(req, res, template))
 }
 
 function sendRes(req, res, template, loadable) {
@@ -110,14 +108,13 @@ function sendRes(req, res, template, loadable) {
 		const initialState = client.extract()
 
 		const bundles = getBundles(loadable ? loadable : stats, modules);
-		let styles = bundles.filter(bundle => bundle.file.endsWith('.css'))
 		let scripts = bundles.filter(bundle => bundle.file.endsWith('.js'))
 		let uniqueScripts = [... new Set(scripts)] // removes any duplicates
 
 		const html = template
 			.replace('{{content}}', content)
 			.replace('{{username}}', username)
-			.replace('{{state}}', JSON.stringify(initialState).replace(/</g, '\\u003c') )
+			.replace("'{{state}}'", JSON.stringify(initialState).replace(/</g, '\\u003c') )
 			.replace('{{loadableScripts}}', uniqueScripts.map(script => {
 				return `<script src="${script.publicPath}"></script>`
 			}).join('\n'))

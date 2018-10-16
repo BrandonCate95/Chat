@@ -5,14 +5,9 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const { ReactLoadablePlugin } = require("react-loadable/webpack")
 const CompressionPlugin = require("compression-webpack-plugin");
-// const WorkboxPlugin = require('workbox-webpack-plugin')
 
 const devMode = process.env.NODE_ENV == 'dev'
 module.exports = {
-  // entry: {
-  //   index: './src/index.js',
-  //   app: './src/App.js'
-  // },
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
@@ -35,7 +30,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
-      // inject: false
     }),
     new webpack.EnvironmentPlugin(['NODE_ENV']),
     new webpack.HashedModuleIdsPlugin(),
@@ -47,12 +41,6 @@ module.exports = {
         filename: path.resolve(__dirname, 'react-loadable.json'),
     }),
     new CompressionPlugin()
-    // new WorkboxPlugin.GenerateSW({
-    //   // these options encourage the ServiceWorkers to get in there fast 
-    //   // and not allow any straggling "old" SWs to hang around
-    //   clientsClaim: true,
-    //   skipWaiting: true
-    // }),
   ],
   output: {
     filename: '[name].[hash].js',
@@ -81,7 +69,12 @@ module.exports = {
       {
           test: /\.(png|svg|jpg|gif)$/,
           use: [
-              'file-loader'
+            {
+              loader: 'file-loader',
+              options: {
+                name:'[name].[ext]'
+              }
+            }
           ]
       },
       {

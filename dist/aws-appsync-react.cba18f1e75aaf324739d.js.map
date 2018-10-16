@@ -1,0 +1,1 @@
+{"version":3,"file":"aws-appsync-react.cba18f1e75aaf324739d.js","sources":["webpack:///./node_modules/babel-runtime/core-js/symbol.js"],"sourcesContent":["module.exports = { \"default\": require(\"core-js/library/fn/symbol\"), __esModule: true };"],"mappings":"AAAA","sourceRoot":""}

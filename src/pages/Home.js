@@ -2,7 +2,7 @@ import React from 'react'
 import Messages from '../components/ListMessages'
 import Loadable from 'react-loadable'
 import Loading from '../components/Loading'
-// import Auth from '@aws-amplify/auth/lib'
+import { Helmet } from 'react-helmet'
 
 const LoadableTextArea = Loadable({
     loader: () => import('../mdc/TextArea'),
@@ -29,17 +29,16 @@ class Home extends React.Component {
     }
     
     callApi = async () => {
-        // console.log(Auth)
-        // console.log(await Auth.currentCredentials())
-        // const authenticated = (await Auth.currentCredentials()).authenticated
+        const { default: Auth } = await import(/* webpackChunkName: "auth" */ '@aws-amplify/auth/lib')
+        const authenticated = (await Auth.currentCredentials()).authenticated
 
-        // fetch("/api/set_auth", {
-        //     method: 'POST',
-        //     body: JSON.stringify({
-        //         authenticated
-        //     }),
-        //     headers: {"Content-Type": "application/json"}
-        // })
+        fetch("/api/set_auth", {
+            method: 'POST',
+            body: JSON.stringify({
+                authenticated
+            }),
+            headers: {"Content-Type": "application/json"}
+        })
     }
 
     render(){
@@ -47,6 +46,9 @@ class Home extends React.Component {
         const {username} = this.props
         return(
             <React.Fragment>
+                <Helmet>
+                    <title>Chat</title>
+                </Helmet>
                 <Messages />
                 <LoadableTextArea 
                     content={message}

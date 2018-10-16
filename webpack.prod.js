@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -17,7 +18,24 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin(),
+    new WorkboxPlugin.GenerateSW({
+      swDest: '../service-worker.js',
+      runtimeCaching: [
+        {
+            urlPattern: /images/,
+            handler: 'cacheFirst'
+        },
+        {
+            urlPattern: new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
+            handler: 'cacheFirst'
+        },
+        {
+            urlPattern: /.*/,
+            handler: 'networkFirst'
+        }
+      ]
+    })
   ],
   optimization: {
     minimizer: [

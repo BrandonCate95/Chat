@@ -1,6 +1,7 @@
 import React from 'react'
 import { Query } from "react-apollo"
 import gql from 'graphql-tag'
+import { Helmet } from 'react-helmet'
 
 const GET_NEO4J = gql`
 query getNeo4j {
@@ -15,6 +16,9 @@ query getNeo4j {
 
 const AboutPage = () => (
     <div>
+        <Helmet>
+            <title>Contact</title>
+        </Helmet>
         a boot!
         <Query
             query={GET_NEO4J}

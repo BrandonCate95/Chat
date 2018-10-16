@@ -1,7 +1,11 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 const About = () => (
     <div>
+        <Helmet>
+            <title>About</title>
+        </Helmet>
         <div>
             This app was started as a project to test out server side rendering.
             It currently achieves this by using react apollo, react loadable, and react router.
