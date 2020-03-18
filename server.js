@@ -4,8 +4,6 @@ var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
@@ -74,10 +72,6 @@ var _awsExports = require('./lib/aws-exports');
 
 var _awsExports2 = _interopRequireDefault(_awsExports);
 
-var _awsAuthExports = require('./lib/aws-auth-exports');
-
-var _awsAuthExports2 = _interopRequireDefault(_awsAuthExports);
-
 var _lib = require('@aws-amplify/auth/lib');
 
 var _lib2 = _interopRequireDefault(_lib);
@@ -92,7 +86,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-_lib4.default.configure(_extends({}, _awsExports2.default, { Auth: _awsAuthExports2.default }));
+_lib4.default.configure(_awsExports2.default);
 
 var app = (0, _express2.default)();
 var DIST_DIR = _path2.default.join(__dirname, "dist");
@@ -176,6 +170,7 @@ function sendRes(req, res, template, loadable) {
 		region: _AppSync2.default.region,
 		auth: {
 			type: _AppSync2.default.authenticationType,
+			apiKey: _AppSync2.default.apiKey,
 			credentials: function () {
 				var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
 					return _regenerator2.default.wrap(function _callee2$(_context2) {

@@ -19,10 +19,9 @@ import AWSAppSyncClient from 'aws-appsync'
 import AppSync from './lib/AppSync'
 
 import awsmobile from './lib/aws-exports'
-import awsauth from './lib/aws-auth-exports'
 import Auth from '@aws-amplify/auth/lib'
 import Amplify from '@aws-amplify/core/lib'
-Amplify.configure({ ...awsmobile, Auth: awsauth })    
+Amplify.configure(awsmobile)    
 
 const app = express()
 const DIST_DIR = path.join(__dirname, "dist")
@@ -83,7 +82,8 @@ function sendRes(req, res, template, loadable) {
         url: AppSync.graphqlEndpoint,
         region: AppSync.region,
         auth: {
-            type: AppSync.authenticationType,
+			type: AppSync.authenticationType,
+			apiKey: AppSync.apiKey,
 			credentials: async () => await Auth.currentCredentials(),
         }
 	});

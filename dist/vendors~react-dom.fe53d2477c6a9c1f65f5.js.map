@@ -1,1 +1,0 @@
-{"version":3,"file":"vendors~react-dom.fe53d2477c6a9c1f65f5.js","sources":["webpack:///./node_modules/schedule/index.js"],"sourcesContent":["'use strict';\n\nif (process.env.NODE_ENV === 'production') {\n  module.exports = require('./cjs/schedule.production.min.js');\n} else {\n  module.exports = require('./cjs/schedule.development.js');\n}\n"],"mappings":"AAGA","sourceRoot":""}

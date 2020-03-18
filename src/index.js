@@ -2,9 +2,6 @@ import React from 'react'
 import App from './App'
 import AppSync from './AppSync'
 import awsmobile from './aws-exports'
-import awsauth from './aws-auth-exports'
-import small from './images/small.png'
-import large from './images/large.png'
 
 !async function(){
     const { default: Loadable } = await import(/* webpackChunkName: "loadable" */ 'react-loadable')
@@ -12,12 +9,12 @@ import large from './images/large.png'
     const { hydrate } = await import(/* webpackChunkName: "react-dom" */ 'react-dom')
     const { Rehydrated } = await import(/* webpackChunkName: "aws-appsync-react" */ 'aws-appsync-react')
     const { ApolloProvider } = await import(/* webpackChunkName: "react-apollo" */ 'react-apollo')
-    const { default: Amplify } = await import(/* webpackChunkName: "amplify" */ '@aws-amplify/core')
+    const { default: Amplify } = await import(/* webpackChunkName: "amplify" */ '@aws-amplify/core/lib')
     const { default: Auth } = await import(/* webpackChunkName: "auth" */ '@aws-amplify/auth/lib')
     const { default: AWSAppSyncClient } = await import(/* webpackChunkName: "aws-appsync-react" */ 'aws-appsync')
     const { InMemoryCache } = await import(/* webpackChunkName: "apollo-cache-inmemory" */ 'apollo-cache-inmemory')
 
-    Amplify.configure({ ...awsmobile, Auth: awsauth }) 
+    Amplify.configure(awsmobile) 
 
     const client = new AWSAppSyncClient({
         url: AppSync.graphqlEndpoint,

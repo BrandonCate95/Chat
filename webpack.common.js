@@ -11,6 +11,8 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
+      chunks: 'all',
+      minSize: 0, //stops redundant code in split components.
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
